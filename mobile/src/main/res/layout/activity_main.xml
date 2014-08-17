@@ -1,0 +1,111 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    tools:context=".Main"
+    android:background="#ff000000">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Tip %:"
+        android:id="@+id/tip"
+        android:textColor="#ffffffff"
+        android:layout_marginTop="23dp"
+        android:textSize="20dp"
+        android:layout_toStartOf="@+id/calc"
+        android:layout_below="@+id/bill"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tipBox"
+        android:layout_alignBottom="@+id/tip"
+        android:layout_toEndOf="@+id/tip"
+        android:layout_alignParentEnd="true"
+        android:textColor="#ff000000"
+        android:background="#ffffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Tip Amount:"
+        android:id="@+id/tipAmount"
+        android:textColor="#ffffffff"
+        android:textSize="20dp"
+        android:layout_toStartOf="@+id/billBox"
+        android:layout_marginBottom="22dp"
+        android:layout_above="@+id/grandTotal"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/grandTotalBox"
+        android:layout_toEndOf="@+id/tipAmount"
+        android:textColor="#ff000000"
+        android:background="#ffffffff"
+        android:layout_below="@+id/tipAmount"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/tipBox" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculate"
+        android:id="@+id/calc"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:textColor="#ffffffff" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Grand Total:"
+        android:id="@+id/grandTotal"
+        android:textColor="#ffffffff"
+        android:textSize="20dp"
+        android:layout_toStartOf="@+id/calc"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Enter Bill Amount:"
+        android:id="@+id/bill"
+        android:textColor="#ffffffff"
+        android:textSize="20dp"
+        android:layout_toStartOf="@+id/calc"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignEnd="@+id/calc" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/billBox"
+        android:layout_toEndOf="@+id/tip"
+        android:textColor="#ff000000"
+        android:background="#ffffffff"
+        android:layout_alignTop="@+id/bill"
+        android:layout_marginLeft="39dp"
+        android:layout_alignParentEnd="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/tipAmountBox"
+        android:layout_toEndOf="@+id/tipAmount"
+        android:textColor="#ff000000"
+        android:background="#ffffffff"
+        android:layout_alignTop="@+id/tipAmount"
+        android:layout_alignBottom="@+id/tipAmount"
+        android:layout_alignEnd="@+id/grandTotalBox" />
+
+</RelativeLayout>
