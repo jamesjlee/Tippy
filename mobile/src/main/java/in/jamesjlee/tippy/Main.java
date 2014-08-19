@@ -16,14 +16,14 @@ import java.math.BigDecimal;
 import java.math.RoundingMode;
 
 public class Main extends Activity {
-    public TextView bill;
+    public EditText bill;
     public EditText billBox;
-    public TextView tip;
+    public EditText tip;
     public EditText tipBox;
-    public TextView tipAmount;
-    public TextView tipAmountBox;
-    public TextView grandTotal;
-    public TextView grandTotalBox;
+    public EditText tipAmount;
+    public EditText tipAmountBox;
+    public EditText grandTotal;
+    public EditText grandTotalBox;
     public Button calc;
     public TextView error;
 
@@ -31,14 +31,14 @@ public class Main extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        bill = (TextView) findViewById(R.id.bill);
+        bill = (EditText) findViewById(R.id.bill);
         billBox = (EditText) findViewById(R.id.billBox);
-        tip = (TextView) findViewById(R.id.tip);
+        tip = (EditText) findViewById(R.id.tip);
         tipBox = (EditText) findViewById(R.id.tipBox);
-        tipAmount = (TextView) findViewById(R.id.tipAmount);
-        tipAmountBox = (TextView) findViewById(R.id.tipAmountBox);
-        grandTotal = (TextView) findViewById(R.id.grandTotal);
-        grandTotalBox = (TextView) findViewById(R.id.grandTotalBox);
+        tipAmount = (EditText) findViewById(R.id.tipAmount);
+        tipAmountBox = (EditText) findViewById(R.id.tipAmountBox);
+        grandTotal = (EditText) findViewById(R.id.grandTotal);
+        grandTotalBox = (EditText) findViewById(R.id.grandTotalBox);
         error = (TextView) findViewById(R.id.error);
         calc = (Button) findViewById(R.id.calc);
         error.setText("");
@@ -47,16 +47,16 @@ public class Main extends Activity {
             @Override
             public void onClick(View v) {
                 error.setText("");
-                if (billBox.getText().toString().matches(".*\\d+.*") && tipBox.getText().toString().matches(".*\\d+.*")) {
+                if (billBox.getText().toString().matches("\\d+|\\d*\\.\\d+|\\d+\\.\\d*") && tipBox.getText().toString().matches("\\d+|\\d*\\.\\d+|\\d+\\.\\d*")) {
                     if(billBox.getText().toString() != null && billBox.getText().toString() != "" && tipBox.getText().toString() != null && tipBox.getText().toString() != "") {
                         BigDecimal bill = new BigDecimal(billBox.getText().toString());
                         BigDecimal tip = new BigDecimal(tipBox.getText().toString());
                         BigDecimal oneHundred = new BigDecimal("100");
-                        BigDecimal tipPercent = tip.divide(oneHundred, 2, RoundingMode.CEILING);
+                        BigDecimal tipPercent = tip.divide(oneHundred, 3, RoundingMode.HALF_EVEN);
                         BigDecimal tipAmount = bill.multiply(tipPercent);
                         BigDecimal grandTotal = bill.add(tipAmount);
-                        tipAmountBox.setText(tipAmount.setScale(2, RoundingMode.CEILING).toString());
-                        grandTotalBox.setText(grandTotal.setScale(2, RoundingMode.CEILING).toString());
+                        tipAmountBox.setText(tipAmount.setScale(2, RoundingMode.HALF_EVEN).toString());
+                        grandTotalBox.setText(grandTotal.setScale(2, RoundingMode.HALF_EVEN).toString());
                     }
                 }
                 else {

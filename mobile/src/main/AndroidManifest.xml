@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
+<!-- ic_piggy icon created by Visual Pharm. ic_piggy icon license: http://creativecommons.org/licenses/by-nd/3.0/ -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="in.jamesjlee.tippy" >
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/ic_piggy"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
         <activity
