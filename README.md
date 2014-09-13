@@ -1,7 +1,7 @@
 Tippy
 =====
 
-A simple Tip App
+A simple restaurant tipping application.
 
 How to use
 =====
